@@ -11,6 +11,7 @@ class Atividade {
 
     public:
         Atividade (string nome, bool sincrona);
+        ~Atividade();
         
         string obterNome();
         bool obterSincrona();

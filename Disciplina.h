@@ -8,18 +8,18 @@ using namespace std;
 class Disciplina{
     string codigo;
     string nome;
-    Periodo periodo;
-    Docente professor;
+    Periodo *periodo;
+    Docente *professor;
     // private ArrayList<Atividade> atividades;
 
     public:
-        Disciplina(string codigo, string nome, Periodo periodo, Docente professor);
+        Disciplina(string codigo, string nome, Periodo *periodo, Docente *professor);
         ~Disciplina();
 
         string obterCodigo() const;
         string obterNome() const;
-        Periodo obterPeriodo() const;
-        Docente obterDocente() const;
+        Periodo* obterPeriodo() const;
+        Docente* obterDocente() const;
 
         // void anexaAtividade();
         // ArrayList<Atividade> obterAtividades();

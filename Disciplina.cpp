@@ -5,14 +5,11 @@ Disciplina :: Disciplina(string codigo, string nome, Periodo *periodo, Docente *
     this->nome = nome;
     this->periodo = periodo;
     this->professor = professor;
-
-    // atividades = new ArrayList<>();
 }
 
 Disciplina :: ~Disciplina(){
     delete periodo;
     delete professor;
-    // delete atividades;
 }
 
 string Disciplina :: obterCodigo() const{
@@ -31,3 +28,54 @@ Docente* Disciplina :: obterDocente() const{
     return professor;
 }
 
+vector<Atividade> Disciplina :: obterAtividades(){
+    return atividades;
+}
+
+void Disciplina :: anexaAtividade(Atividade atividade){
+    atividades.push_back(atividade);
+}
+
+double Disciplina :: obterNotaTotal(){
+    double notaTotal = 0;
+    for(Atividade ativ : atividades){
+        notaTotal += ativ.obterAvaliacoes().size();
+    }
+    return notaTotal;
+}
+
+int Disciplina :: obterAvaliacoesTotal(){
+    int qtdAvaliacao = 0;
+    for(Atividade ativ : atividades){
+        qtdAvaliacao += ativ.obterAvaliacoes().size();
+    }
+    return qtdAvaliacao;
+}
+
+int Disciplina :: obterSincronas(){
+    int qtdSinc = 0;
+    for(Atividade a : obterAtividades()){
+        if(a.obterSincrona()){
+            qtdSinc++;
+        }
+    }
+    return qtdSinc;
+}
+
+int Disciplina :: obterAvalitiva(){
+    int qtdAvaliativas = 0;
+    for(Atividade a : obterAtividades()){
+        if(a.ehAvaliativa()) {
+            qtdAvaliativas++;
+        }
+    }
+    return qtdAvaliativas;
+}
+
+int Disciplina :: obterCargaHoraria(){
+    int cargaHoraria = 0;
+    for(Atividade a : obterAtividades()){
+        cargaHoraria += a.obterCargaHoraria();
+    }
+    return cargaHoraria;
+}

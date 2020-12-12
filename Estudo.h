@@ -1,16 +1,21 @@
 #include <iostream>
 #include <string>
+#include <vector>
 #include "Atividade.h"
+#include "Material.h"
 
 using namespace std;
 
 class Estudo : public Atividade{
-    // ArrayList<Material> materiais;
+    vector<Material> materiais;
 
     public:
-        Estudo (string nome, bool sincrona) : Atividade(nome, sincrona){}
-        ~Estudo();
+        Estudo (string nome, bool sincrona, vector<Material> materiais) : 
+        Atividade(nome, sincrona){
+            this->materiais = materiais;
+        }
+        // ~Estudo();
 
-        // ArrayList<Material> getMateriais()
+        vector<Material> getMateriais();
         bool ehAvaliativa();
 };

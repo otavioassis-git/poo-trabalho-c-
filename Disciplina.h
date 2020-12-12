@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <vector>
+#include "Atividade.h"
 #include "Periodo.h"
 #include "Docente.h"
 
@@ -10,7 +12,7 @@ class Disciplina{
     string nome;
     Periodo *periodo;
     Docente *professor;
-    // private ArrayList<Atividade> atividades;
+    vector<Atividade> atividades;
 
     public:
         Disciplina(string codigo, string nome, Periodo *periodo, Docente *professor);
@@ -20,13 +22,13 @@ class Disciplina{
         string obterNome() const;
         Periodo* obterPeriodo() const;
         Docente* obterDocente() const;
+        vector<Atividade> obterAtividades();
 
-        // void anexaAtividade();
-        // ArrayList<Atividade> obterAtividades();
-        // double obterNotaTotal();
-        // int obterAvaliacoesTotal();
+        void anexaAtividade(Atividade atividade);
+        double obterNotaTotal();
+        int obterAvaliacoesTotal();
 
-        // int obterSincronas();
-        // int obterAvalitiva();
-        // int obterCargaHoraria();
+        int obterSincronas();
+        int obterAvalitiva();
+        int obterCargaHoraria();
 };

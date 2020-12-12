@@ -1,12 +1,14 @@
 #include <iostream>
 #include <string>
+#include <vector>
+#include "Avaliacao.h"
 
 using namespace std;
 
 class Atividade {
     string nome;
     bool sincrona;
-    // private ArrayList<Avaliacao> avaliacoes;
+    vector<Avaliacao> avaliacoes;
     // protected Calendar data;
 
     public:
@@ -18,9 +20,9 @@ class Atividade {
         int obterCargaHoraria();
         // Calendar obterData();
 
-        // void anexaAvaliacao(Avaliacao avaliacao);
+        void anexaAvaliacao(Avaliacao avaliacao);
 
-        // ArrayList<Avaliacao> obterAvaliacoes();
+        vector<Avaliacao> obterAvaliacoes();
         // double calculaNota();
 
         virtual bool ehAvaliativa();

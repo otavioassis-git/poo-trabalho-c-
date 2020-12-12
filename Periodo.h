@@ -9,7 +9,7 @@ class Periodo {
     string codigo; 
 
     public:
-        Periodo(int ano, char semestre, string codigo);
+        Periodo(int ano, char semestre);
 
         int obeterAno() const;
         char obterSemestre() const;

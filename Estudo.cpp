@@ -1,9 +1,9 @@
 #include "Estudo.h"
 
-Estudo :: ~Estudo(){
-    // delete materiais;
-}
-
 bool Atividade :: ehAvaliativa(){
     return true;
+}
+
+vector<Material> Estudo :: getMateriais(){
+    return materiais;
 }

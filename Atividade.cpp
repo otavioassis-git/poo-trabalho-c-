@@ -16,3 +16,11 @@ bool Atividade :: obterSincrona(){
 int Atividade :: obterCargaHoraria(){
     return 2;
 }
+
+vector<Avaliacao> Atividade :: obterAvaliacoes(){
+    return avaliacoes;
+}
+
+ void Atividade :: anexaAvaliacao(Avaliacao avaliacao){
+    avaliacoes.push_back(avaliacao);
+ }

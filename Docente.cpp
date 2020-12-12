@@ -11,6 +11,7 @@ Docente :: Docente(string login, string nome){
     this->login = login;
     this->nome = nome;
     // this->paginaWeb = NULL;
+    this->paginaWeb = "nulo";
 }
 
 string Docente :: obterLogin() const{

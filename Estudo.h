@@ -9,6 +9,7 @@ class Estudo : public Atividade{
 
     public:
         Estudo (string nome, bool sincrona) : Atividade(nome, sincrona){}
+        ~Estudo();
 
         // ArrayList<Material> getMateriais()
         bool ehAvaliativa();

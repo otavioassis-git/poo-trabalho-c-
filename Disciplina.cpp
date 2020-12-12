@@ -12,6 +12,7 @@ Disciplina :: Disciplina(string codigo, string nome, Periodo *periodo, Docente *
 Disciplina :: ~Disciplina(){
     delete periodo;
     delete professor;
+    // delete atividades;
 }
 
 string Disciplina :: obterCodigo() const{
